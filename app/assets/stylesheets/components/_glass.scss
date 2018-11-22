@@ -22,13 +22,23 @@
 }
 
 .glass-card {
-  background: white;
   margin: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.cocktail-image {
+  background-image: url("mojito.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+}
+
 .red {
   background: red;
+}
+
+.hidden {
+  display: none;
 }
