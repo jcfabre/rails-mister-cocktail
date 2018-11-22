@@ -10,3 +10,13 @@
 console.log('Hello World from Webpacker')
 
 import 'bootstrap';
+
+
+import { addListenerToCards } from '../components/glass';
+import { getVisitedIdsFromCookie } from '../components/glass';
+import { setVisitedCards } from '../components/glass';
+
+addListenerToCards();
+getVisitedIdsFromCookie();
+setVisitedCards(getVisitedIdsFromCookie());
+

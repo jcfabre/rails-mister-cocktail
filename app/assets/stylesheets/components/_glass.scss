@@ -1,0 +1,34 @@
+
+.glass {
+  fill: lightgrey;
+}
+
+.glass:hover {
+  fill: blue;
+  fill-rule: nonzero;
+  transition: all 3s ease-out;
+  cursor: pointer;
+}
+
+.shaker {
+  fill: grey;
+}
+
+.shaker:hover {
+  fill: blue;
+  fill-rule: nonzero;
+  transition: all 3s ease-out;
+  cursor: pointer;
+}
+
+.glass-card {
+  background: white;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.red {
+  background: red;
+}

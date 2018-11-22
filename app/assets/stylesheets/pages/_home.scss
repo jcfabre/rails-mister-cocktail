@@ -1,1 +1,31 @@
 // Specific CSS for your home-page
+
+.row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.main-container {
+  display:flex;
+  position: sticky !important;
+  top: 0 !important;
+}
+
+.drinks-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid blue;
+  // padding-top: 10px;
+}
+
+#shaker {
+  flex: 0 0 25%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky !important;
+  top: 0 !important;
+  border: 1px solid red;
+}
