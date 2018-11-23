@@ -53,6 +53,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 300px;
+  min-width: 226.5px;
 }
 
 .glass-card-title {
@@ -61,10 +63,10 @@
 }
 
 .cocktail-image {
-  background-image: url("https://res.cloudinary.com/doojphhb7/image/upload/v1542973489/r3gwy85v7nuq3pxf8fuo.jpg");
   background-size: cover;
   background-position: center;
   height: 300px;
+  min-width: 226.5px;
   border-radius: 10px;
 }
 
@@ -76,3 +78,6 @@
   display: none;
 }
 
+.background-hidden {
+  background: none !important;
+}

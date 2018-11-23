@@ -10,16 +10,15 @@ const getVisitedIdsFromCookie = () => {
     }
   });
   return visitedIds;
+  console.log(visitedIds);
 };
 
 const addListenerToCards = () => {
   const glassCards = document.querySelectorAll(".glass-card");
   glassCards.forEach((card) => {
     card.addEventListener("click", (event) => {
-      console.log(event.target.tagName === "A");
       if (event.target.tagName !== "A") {
-        console.log(event.currentTarget.querySelector("svg"));
-        event.currentTarget.classList.toggle("cocktail-image");
+        event.currentTarget.classList.toggle("background-hidden");
         event.currentTarget.querySelector("svg").classList.toggle("hidden");
         event.currentTarget.querySelector(".glass-card-title").classList.toggle("hidden");
         if (getVisitedIdsFromCookie().includes(event.currentTarget.id)) {
@@ -33,8 +32,7 @@ const addListenerToCards = () => {
 
 const setVisitedCards = (array) => {
   array.forEach((element) => {
-    // console.log(document.getElementById(element));
-    document.getElementById(element).classList.toggle("cocktail-image");
+    document.getElementById(element).classList.toggle("background-hidden");
     document.getElementById(element).querySelector("svg").classList.toggle("hidden");
     document.getElementById(element).querySelector(".glass-card-title").classList.toggle("hidden");
   });

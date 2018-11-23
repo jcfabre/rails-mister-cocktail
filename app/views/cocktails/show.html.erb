@@ -8,7 +8,7 @@
   <div class="cocktail-infos">
     <div class="row">
         <div class="col-xs-12 col-sm-6">
-          <%= image_tag "mojito.jpg", alt: "alttext", id: "profile-image" %>
+          <%= cl_image_tag @cocktail.photo, id: "profile-image" %>
         </div>
         <div class="col-xs-12 col-sm-6">
           <div class="ingredients-card">
