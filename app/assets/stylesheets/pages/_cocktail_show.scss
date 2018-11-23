@@ -1,0 +1,27 @@
+#profile-image {
+  height: 500px;
+}
+
+.ingredients-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 500px;
+  background: white;
+  padding: 10px;
+}
+
+.cocktail-header {
+  text-align: center;
+}
+
+.actions-card {
+  display: flex;
+  justify-content: center;
+}
+
+.cocktail-infos {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}

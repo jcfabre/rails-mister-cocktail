@@ -1,12 +1,40 @@
-<h1> <%= @cocktail.name %></h1>
 
-<% @cocktail.doses.each do |dose| %>
-  <li>
-    <%= dose.ingredient.name %>
-    <%= dose.description %>
-    <%= link_to "Delete",cocktail_dose_path(@cocktail, dose), method: :delete  %>
-  </li>
-<% end %>
 
-<%= link_to "Add a dose", new_cocktail_dose_path(@cocktail) %>
-<%= link_to "Back", cocktails_path %>
+<div class="container cocktail-page">
+  <div class="cocktail-header">
+    <h1> <%= @cocktail.name %></h1>
+    <%= link_to "Back", cocktails_path %>
+  </div>
+  <div class="cocktail-infos">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <%= image_tag "mojito.jpg", alt: "alttext", id: "profile-image" %>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+          <div class="ingredients-card">
+            <h2>Ingredients</h2>
+            <ul>
+              <% @cocktail.doses.each do |dose| %>
+                <li>
+                  <%= dose.ingredient.name %>
+                  <%= dose.description %>
+                  <%= link_to "Delete",cocktail_dose_path(@cocktail, dose), method: :delete  %>
+                </li>
+              <% end %>
+            </ul>
+            <%= link_to "Add a dose", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <div class="row actions-card">
+    <div class="col-12">
+      <div>
+        <%= link_to "Edit", edit_cocktail_path(@cocktail), class: "btn btn-success" %>
+        <%= link_to "Delete", cocktail_path(@cocktail),method: :delete, class: "btn btn-danger" %>
+      </div>
+    </div>
+  </div>
+
+</div>
+
