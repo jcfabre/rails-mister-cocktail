@@ -20,6 +20,7 @@
     /* When the animation is finished, start again */
     animation-iteration-count: infinite;
     cursor: pointer;
+    fill: red;
 }
 
 @keyframes shake {
@@ -36,11 +37,27 @@
     100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
+.glass-card-title > a {
+  text-decoration: none;
+  color:white;
+  font-size: 24px;
+  text-shadow: 2px 4px 4px rgba(0,0,0,0.14);
+}
+
+.glass-card-title > a:hover {
+  text-decoration:none;
+  color: red;
+}
 .glass-card {
   margin: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.glass-card-title {
+  position: relative;
+  top: 115px;
 }
 
 .cocktail-image {
