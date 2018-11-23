@@ -6,14 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
-# lemon = Ingredient.create(name: "lemon")
-# ice = Ingredient.create(name: "ice")
-# mint_leaves = Ingredient.create(name: "mint leaves")
-
-# bloody_mary = Cocktail.create(name: "Bloody Mary")
-# mojito = Cocktail.create(name: "mojito")
-# tequila_sunrise = Cocktail.create(name: "tequila sunrise")
+require "open-uri"
+require "json"
 
 cranberry_gin = Cocktail.new(name: "Cranberry Gin")
 cranberry_gin_url = "http://laurencariscooks.com/1_lcc/wp-content/uploads/2016/12/Cranberry-Gin-Cocktail-2-2.jpg"
@@ -40,29 +34,9 @@ sex_on_the_beach_url = "https://www.cocktail-db.com/stat/img/1280/SafeSexOnTheBe
 sex_on_the_beach.remote_photo_url = sex_on_the_beach_url
 sex_on_the_beach.save
 
-# article = Article.new(title: 'NES', body: "A great console")
-# article.remote_photo_url = url
-# article.save
+url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
 
-# dose4cl = Dose.new(description: "4cl")
-# dose6cl = Dose.new(description: "6cl")
-# dose10cl = Dose.new(description: "10cl")
-
-
-# dose4cl.ingredient = lemon
-# dose4cl.cocktail = bloody_mary
-
-# dose6cl.ingredient = ice
-# dose6cl.cocktail = mojito
-
-# dose10cl.ingredient = mint_leaves
-# dose10cl.cocktail = tequila_sunrise
-
-# dose4cl.save
-# dose6cl.save
-# dose10cl.save
-
-
-# # ("a".."z").each do|letter|
-# #   Cocktail.create(name: letter)
-# # end
+data = open(url).read
+JSON.parse(data)["drinks"].each do |element|
+  Ingredient.create(name: element["strIngredient1"])
+end
